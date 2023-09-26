@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="SignUpApplication.View.EmpInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="White">
+
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <!-- HeaderLabel -->
+            <Label Grid.Row="0"
+                   Style="{StaticResource LabelHeader}"
+                   Content="직원등록정보"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!-- 직원ID -->
+                <Label Grid.Column="0"
+                       Style="{StaticResource LabelSubject}"
+                       Content="직원 ID :"/>
+                <TextBox x:Name="EmpId" 
+                         Grid.Column="1"
+                         IsEnabled="False"
+                         Text="{Binding EmpInfo.EmpId, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource UnderLinedTextBox}"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!-- 직원 이름 -->
+                <Label Grid.Column="0"
+                       Style="{StaticResource LabelSubject}"
+                       Content="직원 이름 :" />
+                <TextBox x:Name="EmpName" 
+                         Grid.Column="1"
+                         IsEnabled="False"
+                         Text="{Binding EmpInfo.EmpName, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource UnderLinedTextBox}"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!-- 직원 번호 -->
+                <Label Grid.Column="0"
+                       Style="{StaticResource LabelSubject}"
+                       Content="직원 번호 :" />
+                <TextBox x:Name="EmpNo" 
+                         IsEnabled="False"
+                         Grid.Column="1"
+                         Text="{Binding EmpInfo.EmpNo, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource UnderLinedTextBox}"/>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!-- 비밀번호 -->
+                <Label Grid.Column="0"
+                       Style="{StaticResource LabelSubject}"
+                       Content="비밀번호 :" />
+                <TextBox x:Name="Password" 
+                         Grid.Column="1"
+                         IsEnabled="False"
+                         Text="{Binding EmpInfo.Password, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource UnderLinedTextBox}"/>
+            </Grid>
+            <!-- 종료 Button -->
+            <Button x:Name="NextButton"
+                    Grid.Row="5"
+                    Content="종료"
+                    Command="{Binding btn_cmd}"
+                    CommandParameter="Terminate"
+                    Style="{StaticResource RoundedSubmitButton}"/>
+        </Grid>
+    </Border>
+</UserControl>

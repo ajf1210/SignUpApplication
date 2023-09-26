@@ -1,0 +1,40 @@
+﻿<Window x:Class="SignUpApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SignUpApplication.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="230" Width="300"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+
+    <!-- MainWindow ViewModel -->
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    
+    <!--Round Curve 적용 Border-->
+    <Border Background="#FFFFFF" 
+            CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <!-- 타이틀바 -->
+            <Border Background="#ADD9E6" 
+                    CornerRadius="10,10,0,0" 
+                    Grid.Row="0">
+                <Label MouseDown="Label_MouseDown"
+                       Content="Penta Security System"/>
+            </Border>
+            <!-- 버튼 클릭 시 View 변경을 위한 ContentControl -->
+            <Border Grid.Row="1" 
+                    Padding="40,0,40,0">
+                <ContentControl Content="{Binding UserControl}"/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,19 @@
+﻿<!-- Labe 관련 Style 모음 -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Header용 Label-->
+    <Style x:Key="LabelHeader" TargetType="{x:Type Label}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Height" Value="25"/>
+    </Style>
+    <!--Subject 용 Label-->
+    <Style x:Key="LabelSubject" TargetType="{x:Type Label}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+</ResourceDictionary>
